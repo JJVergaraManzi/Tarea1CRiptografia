@@ -1,0 +1,90 @@
+import selenium
+import time
+import pyautogui as pg
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+
+chrome = webdriver.ChromeOptions()
+chrome.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=chrome)
+driver.maximize_window()
+driver.get("https://burgerking.es")
+pg.moveTo(742,679)
+pg.click()
+time.sleep(5)
+pg.moveTo(778,821)
+pg.click()
+time.sleep(35)
+pg.moveTo(1592,161)
+pg.click() 
+userMail= "juan233" + "@" +"live.cl"
+# funciones que no requieren conectarse
+def Login():
+    time.sleep(5)
+    pg.moveTo(1154,395)
+    pg.click()
+    pg.typewrite(userMail, 0.2)
+    time.sleep(2)
+    pg.press('tab')
+    time.sleep(2)   
+    pg.typewrite("Holamundo123", 0.2)
+    time.sleep(2)
+    pg.press('tab')  
+    time.sleep(5)
+    pg.press('tab')
+    pg.press('enter')
+
+def ForgotPasswd():
+    time.sleep(5)
+    pg.moveTo(1174,528)
+    time.sleep(2)
+    pg.click()
+    time.sleep(2)
+    pg.press('tab')
+    time.sleep(2)
+    pg.press('tab')  
+    pg.typewrite(userMail, 0.2)
+    time.sleep(5)
+    pg.moveTo(1196,576)
+    pg.click()
+
+
+def SignUp():
+    #time.sleep(10)
+    #pg.moveTo(1214,758)
+    pg.click()
+    signUpMail = "juan233@live.cl"
+    time.sleep(5)
+    pg.moveTo(1190,779)
+    pg.click()
+    time.sleep(25)
+    pg.moveTo(1270,429)
+    pg.click()
+    time.sleep(5)
+    pg.typewrite('Juan Jose', 0.2)
+    pg.moveTo(1247,528)
+    pg.click()
+    time.sleep(5)
+    pg.typewrite('Vergara', 0.2)
+    pg.moveTo(1235,628)
+    pg.click()
+    time.sleep(5)
+    pg.typewrite('+56977666273', 0.2)
+    pg.moveTo(1252,735)
+    pg.click()
+    time.sleep(5)
+    pg.typewrite(signUpMail, 0.2)
+    pg.moveTo(1335,815)
+    pg.click()
+    time.sleep(5)
+    pg.moveTo(1337,497)
+    pg.click()
+    time.sleep(5)
+    pg.typewrite('Hola Mundo 123 \n', 0.2)
+    pg.moveTo(1311,654)
+    pg.click()
+
+#Login()
+#ForgotPasswd()
+SignUp()
